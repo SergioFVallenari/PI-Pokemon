@@ -1,10 +1,9 @@
 const axios = require('axios')
+const {Pokemon, Type} = require('../db')
 
-const getPokemons = async (req, res) =>{
-//    res.status(200).send('aca hay pokemones')
-    try {
+const getPokemons = async () =>{
         const url = 'https://pokeapi.co/api/v2/pokemon'
-        const limit = 5
+        const limit = 10
         const {data} = await axios(`${url}?limit=${limit}&offset=00`)
 
         const listPokemons = data.results
@@ -26,11 +25,20 @@ const getPokemons = async (req, res) =>{
             return characterPokemon
         }))
 
-        res.status(200).json(detailPokemons)
+        const pokemons = await Pokemon.findAll({
+            include: {
+                model: Type,
+                attributes:{
+                    exclude:['id']
+                },
+                through: {
+                    attributes:[]
+                }
+            }
+        });
+        const pokemonsCombined = [...detailPokemons, ...pokemons]
+        return pokemonsCombined
 
-    } catch (error) {
-        res.status(404).send('Error al cargar datos')
-    }
 }
 
 module.exports = getPokemons

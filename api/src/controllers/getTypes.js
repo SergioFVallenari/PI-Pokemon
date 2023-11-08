@@ -1,9 +1,9 @@
 const axios = require('axios')
 const {Type} = require('../db')
 
-const getType = async(req, res) =>{
-    try {
-
+const getType = async() =>{
+    
+        
         const dbTypes = await Type.findAll()
 
         if (dbTypes.length === 0) {
@@ -17,15 +17,13 @@ const getType = async(req, res) =>{
 
 
             const dbTypesActualized = await Type.findAll()
-           return res.status(200).json(dbTypesActualized)
+        return dbTypesActualized
         }
+        const dbView = dbTypes.map((name)=>{
+            return name.name
+        })
+        return dbView
 
-        res.status(200).json(dbTypes)
-
-    } 
-    catch (error) {
-        res.status(500).json({ error: 'Hubo un error al obtener los tipos de Pokémon' });
-    }
 }
 
 module.exports = getType
