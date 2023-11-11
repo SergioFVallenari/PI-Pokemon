@@ -3,7 +3,7 @@ const {Pokemon, Type} = require('../db')
 
 const getPokemons = async () =>{
         const url = 'https://pokeapi.co/api/v2/pokemon'
-        const limit = 10
+        const limit = 350
         const {data} = await axios(`${url}?limit=${limit}&offset=00`)
 
         const listPokemons = data.results
@@ -20,7 +20,7 @@ const getPokemons = async () =>{
                 speed: data.stats.find((stat)=> stat.stat.name === 'speed').base_stat,
                 height: data.height,
                 weight: data.weight,
-                types: data.types.map((type)=>type.type.name)
+                types: data.types.map((type)=> ({ name: type.type.name }))
             }
             return characterPokemon
         }))

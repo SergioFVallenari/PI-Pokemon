@@ -10,7 +10,7 @@ const postPokemon = async (name, image, hp, attack, defense, speed, height, weig
             if (create) {
                 const addTypes = await Type.findAll({
                     where: {
-                        name: types
+                         name: types
                     }
                 })
                 return await newPokemon.addTypes(addTypes);
