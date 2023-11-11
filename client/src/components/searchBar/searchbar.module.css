@@ -1,0 +1,32 @@
+.btnSearch {
+    background-color: rgb(0,0,139); /* Amarillo, similar al color Pokémon */
+    color: #ffffff; /* Color de texto oscuro */
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.btnSearch:hover {
+    background-color: rgb(129, 129, 202); /* Amarillo más claro al pasar el mouse */
+}
+
+.btnReset {
+    background-color: #d32f2f; /* Rojo, similar al color Pokémon */
+    color: #fff; /* Texto en color blanco */
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.btnReset:hover {
+    background-color: #ff5252; /* Rojo más claro al pasar el mouse */
+}

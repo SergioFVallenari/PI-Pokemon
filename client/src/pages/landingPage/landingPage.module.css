@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Press Start 2P', cursive;
+    background: repeating-linear-gradient(to bottom,
+            #0f0a1e,
+            #0f0a1e 2px,
+            rgba(15, 10, 30, 0.03) 2px,
+            rgba(15, 10, 30, 0.03) 4px);
+    background-color: #3a3a3a;
+    height: 100vh;
+}
+
+.container h2 {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 90px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 5px;
+    text-shadow: -2px 0 0 #4eff2a,
+        -4px 0 0 #df4a42,
+        2px 0 0 #91fcfe,
+        4px 0 0 #341492;
+    animation: blink 1s steps(4, start) infinite;
+}
+
+.container h3{
+    position: absolute;
+    top: 90vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 90px;
+    color: rgb(255, 230, 0);
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 5px;
+    text-shadow: -2px 0 0 #ff2a2a,
+        -4px 0 0 #426cdf,
+        2px 0 0 #91fcfe,
+        4px 0 0 #29175e;
+    font-size: 20px;
+}
+
+.container img{
+    margin-top: 50px;
+    opacity: 0.8;
+}
+
+@keyframes blink {
+    from {
+        visibility: visible;
+    }
+
+    to {
+        visibility: hidden;
+    }
+}

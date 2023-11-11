@@ -1,0 +1,303 @@
+.detailContainer {
+    display: flex;
+    place-content: center;
+    /* background: repeating-linear-gradient(to bottom,
+            #0f0a1e,
+            #0f0a1e 2px,
+            rgba(15, 10, 30, 0.03) 2px,
+            rgba(15, 10, 30, 0.03) 4px);
+    background-color: #3a3a3a; */
+    height: 100vh;
+    background-image: url('../../../public/pasto.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;  
+    
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: center;
+    width: 30vw;
+    height: 90vh;
+    background-color: #DC143C;
+    margin-top: 5vh;
+    border: 5px solid #7e7e7e;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.border{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid black;
+    height: 80%;
+    width: 80%;
+}
+
+.info{
+    background-color: #DCDCDC;
+    width: 80%;
+    height: 25vh;
+    border: 5px solid #919191;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.iconStyle{
+    display: flex;
+    place-content: center;
+    margin-left: -15px;
+}
+
+.iconStyle span{
+    padding: 20px;
+}
+
+.infoContainer img {
+    filter: drop-shadow(10px 5px 3px rgba(15, 15, 15, 0.329));
+    height: 60%;
+    width: 80%;
+    background: repeating-linear-gradient(to bottom,
+            #0f0a1e,
+            #0f0a1e 2px,
+            rgba(15, 10, 30, 0.03) 2px,
+            rgba(15, 10, 30, 0.03) 4px);
+    background-color: #3a3a3a;
+    border: 5px solid #919191;
+}
+
+
+.statsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: center;
+    height: 80vh;
+    width: 20vw;
+    background-color: #DC143C;
+    margin-top: 10vh;
+    color: #f1f1f1;
+    text-shadow: 1px 3px 5px #525252;
+    border: 5px solid #f1f1f1;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.statsBar {
+    width: 50%;
+    height: 10px;
+}
+
+
+.typeNormal {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #A8A878;
+    color: #ffffff
+}
+
+.typeFire {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #F08030;
+    color: #ffffff;
+}
+
+.iconFire{
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #F08030;
+    padding: 20px;
+    background-image: url('../../../public/icons/fire.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
+}
+
+.typeWater {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #6890F0;
+    color: #ffffff
+}
+
+.typeElectric {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #F8D030;
+    color: #ffffff
+}
+
+.typeGrass {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #78C850;
+    color: #ffffff
+}
+
+.typeIce {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #98D8D8;
+    color: #ffffff
+}
+
+.typeFighting {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #C03028;
+    color: #ffffff
+}
+
+.typePoison {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #A040A0;
+    color: #ffffff
+}
+
+.typeGround {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #E0C068;
+    color: #ffffff
+}
+
+.typeFlying {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #A890F0;
+    color: #ffffff
+}
+
+.iconFlying{
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #A890F0;
+    padding: 20px;
+    background-image: url('../../../public/icons/flying.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
+}
+
+
+.typePsychic {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #F85888;
+    color: #ffffff
+}
+.typeBug {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #A8B820;
+    color: #ffffff
+}
+
+.typeRock {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #B8A038;
+    color: #ffffff
+}
+
+.typeGhost {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #705898;
+    color: #ffffff
+}
+.typeDark {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #705848;
+    color: #ffffff
+}
+
+.typeDragon {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #7038F8;
+    color: #ffffff
+}
+.typeSteel {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #B8B8D0;
+    color: #ffffff
+}
+.typeFairy {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #EE99AC;
+    color: #ffffff
+}
+
+
+/* Estilo adicional para dar color a las barras de progreso */
+progress[value] {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 10px;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #ddd;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: #00b7ff;
+    /* Cambia el color a verde */
+}
+
+/* Estilo adicional para dar color a las barras de progreso en Firefox */
+progress[value]::-moz-progress-bar {
+    background-color: #22aac2
+}
+
+
+
+
+
+
+
+.infoContainer h2{
+    animation: blink 1s steps(4, start) infinite;
+}
+
+@keyframes blink {
+    from {
+        visibility: visible;
+    }
+
+    to {
+        visibility: hidden;
+    }
+}
