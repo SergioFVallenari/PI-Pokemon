@@ -4,6 +4,7 @@ const GET_TYPES = 'GET_TYPES'
 const GET_POKEMON_ID = 'GET_POKEMON_ID'
 const FILTER_TYPE = 'FILTER_TYPE'
 const ORDER_BY = 'ORDER_BY'
+const FILTER_ORIGIN = 'FILTER_ORIGIN'
 
 export {
     GET_ALL_POKEMONS,
@@ -11,5 +12,6 @@ export {
     GET_TYPES,
     GET_POKEMON_ID,
     FILTER_TYPE,
-    ORDER_BY
+    ORDER_BY,
+    FILTER_ORIGIN
 }

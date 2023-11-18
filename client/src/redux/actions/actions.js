@@ -1,6 +1,9 @@
-import { FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON_ID, GET_POKEMON_NAME, GET_TYPES, ORDER_BY } from "./actions-types"
+import { FILTER_ORIGIN, FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON_ID, GET_POKEMON_NAME, GET_TYPES, ORDER_BY } from "./actions-types"
 import axios from 'axios'
+import { showAlert } from "../../App"
 const endpoint = 'http://localhost:3001'
+
+
 
 const getAllPokemons = () =>{
     return async(dispatch)=>{
@@ -12,7 +15,7 @@ const getAllPokemons = () =>{
             })    
         } 
         catch (error) {
-            alert(error.message)
+            showAlert(error.message)
         }
     }
 }
@@ -21,19 +24,21 @@ const getPokemonName = (name) =>{
     return async (dispatch)=>{
         try {
             if (!name) {
-                throw new Error('Ingrese un nombre')
+                throw new Error('Enter a name')
             }
-            const { data } = await axios(`${endpoint}/pokemon`,{ params: { name } })
+            const response = await axios(`${endpoint}/pokemon`,{ params: { name } })
                 return dispatch({
                     type: GET_POKEMON_NAME,
-                    payload: data
+                    payload: response.data
                 })
-            
-            
+             
         } 
         catch (error) {
-            alert(error.message)
-            // throw error
+            if (error.response && error.response.status === 400) {
+                showAlert('Pokémon not found');
+            } else {
+                showAlert(error.message);
+            }
         }
     }
 }
@@ -82,6 +87,13 @@ const orderBy = (order) =>{
     }
 }
 
+const filterOrigin = (origin) =>{
+    return {
+        type: FILTER_ORIGIN,
+        payload: origin
+    }
+}
+
 
 export {
     getAllPokemons,
@@ -89,5 +101,6 @@ export {
     getTypes,
     getPokemonId,
     filterType,
-    orderBy
+    orderBy, 
+    filterOrigin
 }

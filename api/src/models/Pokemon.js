@@ -16,7 +16,10 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate:{
+        isUrl: true
+      }
     },
     hp: {
       type: DataTypes.INTEGER,

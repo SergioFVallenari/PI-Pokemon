@@ -50,7 +50,7 @@ const getPokemonsQuery = async (name) => {
         return dbPokemon;
     } else if (apiResponse && pokemonName) {
         return [pokemonName];
-    } 
+    }
 
 };
 

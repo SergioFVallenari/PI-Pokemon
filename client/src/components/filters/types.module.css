@@ -1,18 +1,32 @@
 .checkContainer{
     display: flex;
-    place-content: center;
-    align-items: center;
+    flex-direction: column;
     background-color: rgb(185, 185, 185);
-    width: 85vw;
-    margin-left: auto;
-    margin-right: auto;
+    width: 10vw;
+    height: 50vh;
+    position: absolute;
     border-radius: 10px;
-   
+    font-size: 10px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.filterContainer{
+  display: flex;
+  align-items: center;
+  place-content: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #6A5ACD;
+  width: 50%;
+  border-radius: 0 0 10px 10px;
+  border: 2px solid black;
+  border-top: 0;
 }
 
 .buttonFilter {
-    margin-top: 10px;
-    margin-left: 250px;
+ 
     padding: 5px 10px; /* Añade un poco de espacio interno al botón */
     background-color: #4caf50; /* Cambia el color de fondo del botón */
     color: white; /* Cambia el color del texto del botón a blanco */
@@ -30,19 +44,33 @@
     width: 10px; /* Ajusta el tamaño del radio */
     height: 10px;
     border-radius: 50%; /* Hace que el radio sea redondo */
-    border: 1px solid rgb(243, 207, 2); /* Agrega un borde */
+    border: 1px solid  	#DC143C; /* Agrega un borde */
     outline: none;
     transition: 0.3s; /* Agrega una transición suave */
   }
   
   /* Estilos para los checkboxes cuando están marcados */
   .checkContainer input[type="radio"]:checked {
-    background-color: rgb(0, 253, 114);
-    border: 1px solid #4caf50;
+    background: linear-gradient(to bottom, #ff0000 0%, #ff0000 50%, #ffffff 50%, #ffffff 100%);
+    border: 1px solid #202020;
   }
   
   /* Estilos para los labels cuando se pasan por encima */
+  
+
   .checkContainer label:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     color: #eb0909;
   }
+
+select{
+  font-family: 'Press Start 2P';
+  margin: 0 5px;
+  border-radius: 20px;
+}
+
+option{
+  font-family: 'Press Start 2P';
+  background-color:  	#B0C4DE;
+}
+

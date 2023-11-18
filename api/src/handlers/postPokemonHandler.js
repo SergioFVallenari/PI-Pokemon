@@ -10,12 +10,12 @@ const postPokemonHandler = async (req, res) => {
             const lowerName = name.toLowerCase()
             const newPokemon = await postPokemon(lowerName, image, hp, attack, defense, speed, height, weight, types)
             if (newPokemon) {
-                res.status(200).send('Pokemon creado con éxito')
+                res.status(200).json({message: 'Pokemon creado con exito'})
             }
         }
     } 
     catch (error) {
-        res.status(400).send(error.message)
+        res.status(404).send(error.message)
     }
 }
 

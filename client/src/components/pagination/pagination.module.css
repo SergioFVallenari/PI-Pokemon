@@ -1,0 +1,12 @@
+.pagContainer button{
+    background: linear-gradient(to bottom, red 0%, red 50%, white 50%, white 100%);
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.3s;
+    border: 1px solid black;
+}
+
+.pagContainer button:hover{
+    
+    transform: scale(1.1,1.1);
+}

@@ -12,7 +12,7 @@
     height: 100vh;
 }
 
-.container h2 {
+.container h1 {
     position: absolute;
     top: 250px;
     left: 0;
@@ -32,6 +32,28 @@
         4px 0 0 #341492;
     animation: blink 1s steps(4, start) infinite;
 }
+
+.container h2 {
+    position: absolute;
+    top: 450px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 90px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 5px;
+    text-shadow: -2px 0 0 #4eff2a,
+        -4px 0 0 #df4a42,
+        2px 0 0 #91fcfe,
+        4px 0 0 #341492;
+    transition: 0.4s ease-out;
+}
+
 
 .container h3{
     position: absolute;
@@ -58,6 +80,8 @@
     margin-top: 50px;
     opacity: 0.8;
 }
+
+
 
 @keyframes blink {
     from {

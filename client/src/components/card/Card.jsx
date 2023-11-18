@@ -15,12 +15,11 @@ const Card = ({ id, name, image, types }) => {
     return (
         <>
             <div className={`${style.cardContainer} ${style[backgroundClass]}`}>
-                <h3>{name.charAt(0).toUpperCase() + name?.slice(1)} </h3>
-                <Link to={`/detail/${id}`}>
+                <div className={style.imgContainer}>
                     <img src={image} alt="" />
-                </Link>
+                </div>
+                <h3>{name.charAt(0).toUpperCase() + name?.slice(1)}</h3>
                 {/* <h3>{types.map((type) => type.charAt(0).toUpperCase() + type?.slice(1))}</h3> */}
-
                 <div className={style.icon}>
                     {types.map((type, index) => (
                         <span key={index} className={style[`type${type.trim()}`]}>
@@ -28,6 +27,9 @@ const Card = ({ id, name, image, types }) => {
                         </span>
                     ))}
                 </div>
+                <Link to={`/detail/${id}`}>
+                    <button className={style.btnDetail}>➕</button>
+                </Link>
 
 
             </div>

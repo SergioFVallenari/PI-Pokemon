@@ -25,7 +25,7 @@ const getPokemonsById = async (id) => {
     const pokemonById = {
       id: data.id,
       name: data.name,
-      image: data.sprites.other.dream_world.front_default,
+      image: data.sprites.other.dream_world.front_default ? data.sprites.other.dream_world.front_default : data.sprites.other.home.front_default,
       hp: data.stats.find((stat) => stat.stat.name === 'hp').base_stat,
       attack: data.stats.find((stat) => stat.stat.name === 'attack').base_stat,
       defense: data.stats.find((stat) => stat.stat.name === 'defense').base_stat,

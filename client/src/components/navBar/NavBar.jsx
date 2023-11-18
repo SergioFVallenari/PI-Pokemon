@@ -6,11 +6,13 @@ const NavBar = () => {
 
     return (
         <>
-        <div className={style.navContainer}>
-            <NavLink to='/createpokemon'><button>Crear Pokemon</button></NavLink>
-            <SearchBar />
-            <NavLink to='/'><button>Salir</button></NavLink>
-        </div>
+            <header>
+                <nav className={style.navContainer}>
+                    <NavLink to='/createpokemon'><button>Create Pokémon</button></NavLink>
+                    <SearchBar />
+                    <NavLink to='/'><button>Exit</button></NavLink>
+                </nav>
+            </header>
         </>
     )
 }
