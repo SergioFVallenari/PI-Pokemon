@@ -1,4 +1,4 @@
-import { FILTER_ORIGIN, FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON_ID, GET_POKEMON_NAME, GET_TYPES, ORDER_BY } from "../actions/actions-types"
+import { FILTER_ORIGIN, FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON_ID, GET_POKEMON_NAME, GET_TYPES, ORDER_BY, RESET_DETAIL } from "../actions/actions-types"
 
 const initialState = {
     allPokemons: [], //Almacena todos los pokemons en general, este estado no se modifica sino que sirve para ir filtrando y ordenando
@@ -7,6 +7,7 @@ const initialState = {
     apiPokemons: [], //Almacena los pokemons que encuentra en la api
     detailPokemon: [], //Almacena los datos de los pokemons en la llamada por ID
     allTypes: [], // Almacena los tipos de pokemons en la llamada get y sirve para ir haciendo mapeos en el renderizado de los componentes
+    originState: []
 }
 
 
@@ -48,12 +49,25 @@ const reducer = (state = initialState, { type, payload }) => {
                 detailPokemon: payload
             }
 
-        case FILTER_TYPE:
-            const pokemonsFilters = payload === 'all' ? state.allPokemons : state.allPokemons.filter((pokemon) => pokemon.types.map((type) => type.name).includes(payload))
-            // const dbPkoemonFilters = payload === 'all' ? state.dbPokemons : state.dbPokemons.filter((pokemon) => pokemon.types.map((type) => type.name).includes(payload))
+        case RESET_DETAIL:
             return {
                 ...state,
-                allPokemonsCopy: pokemonsFilters,
+                detailPokemon: ""
+            }
+
+        case FILTER_TYPE:
+
+            // const dbPkoemonFilters = payload === 'all' ? state.dbPokemons : state.dbPokemons.filter((pokemon) => pokemon.types.map((type) => type.name).includes(payload))
+            let pokemonsDb;
+            let pokemonsFilters;
+            if (state.originState.length > 0) {
+                pokemonsDb = payload === 'all' ? state.allPokemons : state.dbPokemons.filter((pokemon) => pokemon.types.map((type) => type.name).includes(payload))
+            } else {
+                pokemonsFilters = payload === 'all' ? state.allPokemons : state.allPokemons.filter((pokemon) => pokemon.types.map((type) => type.name).includes(payload))
+            }
+            return {
+                ...state,
+                allPokemonsCopy: state.originState.length > 0 ? pokemonsDb : pokemonsFilters
             }
 
         case ORDER_BY:
@@ -63,23 +77,27 @@ const reducer = (state = initialState, { type, payload }) => {
                     state.allPokemonsCopy.slice().sort((a, b) => b.name.localeCompare(a.name)) :
                     payload === "ATQ-ASC" ? state.allPokemonsCopy.slice().sort((a, b) => a.attack - b.attack) :
                         payload === "ATQ-DESC" ? state.allPokemonsCopy.slice().sort((a, b) => b.attack - a.attack) :
-                            state.allPokemonsCopy
+                            state.allPokemons
 
             return {
                 ...state,
                 allPokemonsCopy: pokemons
             }
+
         case FILTER_ORIGIN:
-            const origin = payload === 'db' ? state.dbPokemons : payload === 'api' ? state.apiPokemons : payload === 'all' && state.allPokemons
+            const origin = payload === 'db' ? state.dbPokemons : payload === 'api' ? state.apiPokemons : payload === 'all' && state.allPokemons 
+    
             return {
                 ...state,
-                allPokemonsCopy: origin
+                allPokemonsCopy: origin,
+                originState: payload === 'db' && state.dbPokemons
             }
+
         default:
-            return{
+            return {
                 ...state
-            } 
-                
+            }
+
     }
 }
 

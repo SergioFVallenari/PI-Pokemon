@@ -123,7 +123,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #A8A878;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconNormal{
+    background-color: #A8A878;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/normal.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeFire {
@@ -132,6 +144,7 @@
     padding: 2px;
     background-color: #F08030;
     color: #ffffff;
+    border: 2px solid black;
 }
 
 .iconFire{
@@ -150,7 +163,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #6890F0;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconWater{
+    background-color: #6890F0;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/water.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeElectric {
@@ -158,7 +183,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #F8D030;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconElectric{
+    background-color: #F8D030;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/electric.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeGrass {
@@ -166,7 +203,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #78C850;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconGrass{
+    background-color: #78C850;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/grass.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeIce {
@@ -174,7 +223,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #98D8D8;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconIce{
+    background-color: #98D8D8;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/ice.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeFighting {
@@ -182,7 +243,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #C03028;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconFighting{
+    background-color: #C03028;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/fighting.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typePoison {
@@ -190,7 +263,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #A040A0;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconPoison{
+    background-color: #A040A0;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/poison.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeGround {
@@ -198,7 +283,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #E0C068;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconGround{
+    background-color: #E0C068;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/ground.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeFlying {
@@ -206,7 +303,8 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #A890F0;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
 }
 
 .iconFlying{
@@ -226,14 +324,39 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #F85888;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
 }
+
+.iconPsychic{
+    background-color: #F85888;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/psychic.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
+}
+
 .typeBug {
     margin: 5px;
     border-radius: 5px;
     padding: 2px;
     background-color: #A8B820;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconBug{
+    background-color: #A8B820;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/bug.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeRock {
@@ -241,7 +364,19 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #B8A038;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconRock{
+    background-color: #B8A038;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/rock.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeGhost {
@@ -249,14 +384,39 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #705898;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
 }
+
+.iconGhost{
+    background-color: #705898;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/ghost.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
+}
+
 .typeDark {
     margin: 5px;
     border-radius: 5px;
     padding: 2px;
     background-color: #705848;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconDark{
+    background-color: #705848;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/dark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 .typeDragon {
@@ -264,21 +424,59 @@
     border-radius: 5px;
     padding: 2px;
     background-color: #7038F8;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
 }
+
+.iconDragon{
+    background-color: #7038F8;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/dragon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
+}
+
 .typeSteel {
     margin: 5px;
     border-radius: 5px;
     padding: 2px;
     background-color: #B8B8D0;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
 }
+
+.iconSteel{
+    background-color: #B8B8D0;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/steel.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
+}
+
 .typeFairy {
     margin: 5px;
     border-radius: 5px;
     padding: 2px;
     background-color: #EE99AC;
-    color: #ffffff
+    color: #ffffff;
+    border: 2px solid black;
+}
+
+.iconFairy{
+    background-color: #EE99AC;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    background-image: url('../../../public/icons/fairy.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px
 }
 
 
@@ -309,7 +507,21 @@ progress[value]::-moz-progress-bar {
     border-radius: 100%;
     background-color: #00b7ff;
     position: relative;
-    
+    padding: 10px;
+}
+
+.btnNext{
+    border-radius: 100%;
+    background-color:  	 	#00FF00;
+    position: relative;
+    padding: 10px;
+}
+
+.btnPrev{
+    border-radius: 100%;
+    background-color:  	 	#00FF00;
+    position: relative;
+    padding: 10px;
 }
 
 .info h1{

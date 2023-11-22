@@ -1,15 +1,17 @@
 import style from './formCreate.module.css'
 import rojo from '../../../public/rojo.png'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import validation from './validation'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { getAllPokemons } from '../../redux/actions/actions'
 
 
 const FormCreate = ({ create }) => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const types = useSelector((state) => state.allTypes)
-    // console.log('componente form', types);
+    console.log('componente form', types);
     const [inputData, setInputData] = useState({
         name: "",
         image: "",
@@ -55,8 +57,9 @@ const FormCreate = ({ create }) => {
 
         if (Object.keys(formErrors).length === 0) {
             create(inputData)
+            dispatch(getAllPokemons())
             navigate('/home')
-        }else {
+        } else {
             setErrors(formErrors);
         }
             
@@ -66,11 +69,11 @@ const FormCreate = ({ create }) => {
         <>
             <section className={style.container}>
                 <article className={style.formContainer}>
-
-
-                    <h2>Creá tu pokemon</h2>
-
-
+                    <Link to='/home'>
+                    <button> Back </button>
+                    </Link>
+                    
+                    <h2>Create Pokémon</h2>
                     <form onChange={handleChange}>
                         <label htmlFor="name">Name:</label>
                         <input type="text" value={inputData.name} name='name' id='name' onChange={handleChange} />
@@ -126,7 +129,7 @@ const FormCreate = ({ create }) => {
                                 ))
                             }
                         </div>
-                        <input type="submit" value='Crear' onClick={handleSubmit} />
+                        <button onClick={handleSubmit}> Create </button>
                     </form>
                 </article>
                 <article>

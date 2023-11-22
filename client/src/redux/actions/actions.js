@@ -1,4 +1,4 @@
-import { FILTER_ORIGIN, FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON_ID, GET_POKEMON_NAME, GET_TYPES, ORDER_BY } from "./actions-types"
+import { FILTER_ORIGIN, FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON_ID, GET_POKEMON_NAME, GET_TYPES, ORDER_BY, RESET_DETAIL } from "./actions-types"
 import axios from 'axios'
 import { showAlert } from "../../App"
 const endpoint = 'http://localhost:3001'
@@ -58,6 +58,14 @@ const getPokemonId = (id) =>{
     }
 }
 
+const resetDetail = () =>{
+    return (dispatch) =>{
+        return dispatch({
+            type: RESET_DETAIL
+        })
+    }
+}
+
 const getTypes = () =>{
     return async(dispatch)=>{
         try {
@@ -102,5 +110,6 @@ export {
     getPokemonId,
     filterType,
     orderBy, 
-    filterOrigin
+    filterOrigin,
+    resetDetail
 }

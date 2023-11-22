@@ -1,20 +1,28 @@
 import style from './detail.module.css'
+import next from './next.png'
+import previous from './previous.png'
+import exit from './exit.png'
 
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from "react"
-import { getPokemonId } from "../../redux/actions/actions"
+import { getAllPokemons, getPokemonId, resetDetail } from "../../redux/actions/actions"
+
 
 
 
 const Detail = ({ deletePokemons }) => {
     let { id } = useParams()
+    // console.log('este es el id', id);
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const detailPokemon = useSelector((state) => state.detailPokemon)
 
     useEffect(() => {
         dispatch(getPokemonId(id))
+        return () => {
+            dispatch(resetDetail())
+        }
     }, [dispatch, id])
 
     function capitalLetter(string) {
@@ -24,27 +32,32 @@ const Detail = ({ deletePokemons }) => {
 
 
     const handleSubmit = () => {
-        deletePokemons(id)
-        navigate('/home')
+        const confirmed = window.confirm('¿Do you want to delete the card?')
+        if (confirmed) {
+            
+            deletePokemons(id)
+            dispatch(getAllPokemons())
+            navigate('/home')
+        }
     }
 
     const handleSubmitNext = () => {
-        const nextId = parseInt(id, 10) + 1;
+        const nextId = Number(id) + 1;
         if (nextId <= 350) {
             navigate(`/detail/${nextId}`);
             dispatch(getPokemonId(nextId));
         }
-        else{
+        else {
             alert('No hay mas pokemons!')
         }
     }
 
     const handleSubmitPrevious = () => {
-        const previousId = parseInt(id, 10) - 1;
+        const previousId = Number(id) - 1;
         if (previousId < 1) {
             alert('No hay pokemons')
             navigate(`/detail/${id}`);
-        }else{
+        } else {
             navigate(`/detail/${previousId}`);
             dispatch(getPokemonId(previousId));
         }
@@ -55,9 +68,7 @@ const Detail = ({ deletePokemons }) => {
             <section className={style.detailContainer}>
                 <div className={style.contBorder}>
                     <article className={style.infoContainer}>
-                        <Link to='/home'>
-                            <button className={style.btnHome}>✖</button>
-                        </Link>
+
                         {
                             isNaN(id) && <button onClick={handleSubmit}>Delete</button>
                         }
@@ -126,12 +137,19 @@ const Detail = ({ deletePokemons }) => {
                                 max="1000"
                             ></progress>
                         </div>
-                        <span>
-
-                            <button onClick={handleSubmitPrevious}></button>
-                            <button></button>
-                            <button onClick={handleSubmitNext}></button>
-                        </span>
+                        {
+                            !isNaN(id) ?
+                                <span>
+                                    <button onClick={handleSubmitPrevious} className={style.btnPrev}><img src={previous} alt="" /></button>
+                                    <Link to='/home'>
+                                        <button className={style.btnHome}> <img src={exit} alt="" /></button>
+                                    </Link>
+                                    <button onClick={handleSubmitNext} className={style.btnNext}><img src={next} alt="" /></button>
+                                </span> :
+                                <Link to='/home'>
+                                    <button className={style.btnHome}> <img src={exit} alt="" /></button>
+                                </Link>
+                        }
                     </article>
                 </div>
             </section>

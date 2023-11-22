@@ -1,54 +1,58 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux'
-import { filterOrigin, filterType, orderBy } from "../../redux/actions/actions";
+
 
 import style from './types.module.css'
 
-const TypesFilter = ({ allTypes, handleRadioChange, selectedRadio }) => {
-  const dispatch = useDispatch()
+const TypesFilter = ({ allTypes, handleRadioChange, selectedRadio, handleOrder, selectedOrder, handleOrigin, selectedOrigin, handleButtonClick, showRadios }) => {
+  // const dispatch = useDispatch()
 
-  const [showRadios, setShowRadios] = useState(false);
+  // const [showRadios, setShowRadios] = useState(false);
   // const [selectedRadio, setSelectedRadio] = useState('all');
-  const [selectedOrder, setSelectedOrder] = useState('null')
-  const [selectedOrigin, setSelectedOrigin] = useState('all')
+  // const [selectedOrder, setSelectedOrder] = useState('null')
+  // const [selectedOrigin, setSelectedOrigin] = useState('')
 
   /* Funciones manejadoras de eventos */
-  const handleButtonClick = () => {
-    setShowRadios(!showRadios);
-  };
+  // const handleButtonClick = () => {
+  //   setShowRadios(!showRadios);
+  //   if (showRadios) {
+  //     handleRadioChange('all')
+  //     setSelectedOrigin('')
+  //     setSelectedOrder('null')
+  //   }
+  // };
 
   // const handleRadioChange = (radioName) => {
   //   setSelectedRadio(radioName);
   //   dispatch(filterType(radioName))
   // };
 
-  const handleOrder = (selectValue) => {
-    setSelectedOrder(selectValue)
-    dispatch(orderBy(selectValue))
-  }
+  // const handleOrder = (selectValue) => {
+  //   setSelectedOrder(selectValue)
+  //   dispatch(orderBy(selectValue))
+  // }
 
-  const handleOrigin = (originValue) =>{
-    setSelectedOrigin(originValue)
-    dispatch(filterOrigin(originValue))
-  }
+  // const handleOrigin = (originValue) =>{
+  //   setSelectedOrigin(originValue)
+  //   dispatch(filterOrigin(originValue))
+  // }
 
   return (
     <>
       <div className={style.filterContainer} >
         <button onClick={handleButtonClick} className={style.buttonFilter}>
-          {showRadios ? "Cerrar" : "Filtrar"}
+          {showRadios ? "Reset" : "Filter"}
         </button>
         <select id="orderSelect" name="orderSelect" value={selectedOrder} onChange={(e) => handleOrder(e.target.value)}>
-          <option value='null'>Order By</option>
+          <option value='null' disabled>Order By</option>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A</option>
           <option value="ATQ-ASC">ATQ ⬆</option>
           <option value="ATQ-DESC">ATQ ⬇</option>
         </select>
-        <select id="originSelect" name="originSelect" value={selectedOrigin} onChange={(e)=>{handleOrigin(e.target.value)}}>
+        <select id="originSelect" name="originSelect" value={selectedOrigin} onChange={(e) => { handleOrigin(e.target.value) }}>
+          <option value="" disabled>Origin</option>
           <option value="all">All Pokemons</option>
           <option value="db">Created</option>
-          <option value="api">Originals</option>
+          <option value="api">Api</option>
         </select>
       </div>
       {showRadios && (

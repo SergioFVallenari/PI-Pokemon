@@ -4,43 +4,24 @@ import style from './homePage.module.css'
 
 import React from "react"
 import { useDispatch, useSelector } from 'react-redux'
-import { filterType, getAllPokemons, getTypes } from "../../redux/actions/actions"
-import { useEffect, useState } from "react"
+import { filterOrigin, filterType, orderBy } from "../../redux/actions/actions"
+import {  useState } from "react"
 import TypesFilter from "../../components/filters/Filters"
 import Pagination from "../../components/pagination/pagination"
-import Loading from "../../components/loading/Loading"
 
 
 
-const HomePage = React.memo(() => {
+const HomePage = ({actualPage, handlePageChange, setActualPage}) => {
     const dispatch = useDispatch()
     const allPokemons = useSelector((state) => state.allPokemonsCopy)
     const allTypes = useSelector((state) => state.allTypes)
-    const [loading, setLoading] = useState(false)
     const [selectedRadio, setSelectedRadio] = useState('all');
-    // console.log('estos son los pokemons', allPokemons);
-
-    useEffect(() => {  //Se muestran todos los pokemones ni bien se monta el componente
-        const fetchData = async () => {
-            try {
-                setLoading(true)
-                await dispatch(getAllPokemons());
-                await dispatch(getTypes());
-            } catch (error) {
-
-            }
-            finally {
-                // Oculta el loader después de cargar los datos
-                setLoading(false);
-            }
-        }
-        fetchData()
-
-    }, [dispatch])
-
+    const [selectedOrder, setSelectedOrder] = useState('null')
+    const [selectedOrigin, setSelectedOrigin] = useState('')
+    const [showRadios, setShowRadios] = useState(false);
 
     /*Comienzo del paginado*/
-    const [actualPage, setActualPage] = useState(1)
+    // const [actualPage, setActualPage] = useState(1)
     const cardsXpage = 12
 
     //Calculo de elementos para mostrar
@@ -50,13 +31,6 @@ const HomePage = React.memo(() => {
     const currentCards = allPokemons.slice(indexOfFirstCard, indexOfLastCard)
     const totalPages = Math.ceil(allPokemons.length / cardsXpage)
 
-    // console.log('pokemones en total', allPokemons);
-
-
-
-    const handlePageChange = (newPage) => {
-        setActualPage(newPage);
-    };
 
 
     const handleRadioChange = (radioName) => {
@@ -64,22 +38,54 @@ const HomePage = React.memo(() => {
         dispatch(filterType(radioName))
         setActualPage(1)
     };
+
+    const handleOrder = (selectValue) => {
+        setSelectedOrder(selectValue)
+        dispatch(orderBy(selectValue))
+        setActualPage(1)
+    }
+
+    const handleOrigin = (originValue) => {
+        setSelectedOrigin(originValue)
+        dispatch(filterOrigin(originValue))
+        setActualPage(1)
+    }
+
+    const handleButtonClick = () => {
+        setShowRadios(!showRadios);
+        if (showRadios) {
+            handleRadioChange('all')
+            setSelectedOrigin('')
+            setSelectedOrder('null')
+        }
+    };
+
+    
+
     return (
         <>
-            <div className={style.container}>
-                <NavBar />
-                {
-                    loading ? <Loading /> : <>
-                        <TypesFilter allTypes={allTypes} handleRadioChange={handleRadioChange} selectedRadio={selectedRadio} />
+            <section className={style.container}>
+                <NavBar setActualPage={setActualPage}/>
+                        <TypesFilter
+                            allTypes={allTypes}
+                            handleRadioChange={handleRadioChange}
+                            selectedRadio={selectedRadio}
+                            handleOrder={handleOrder}
+                            selectedOrder={selectedOrder}
+                            handleOrigin={handleOrigin}
+                            selectedOrigin={selectedOrigin}
+                            handleButtonClick={handleButtonClick}
+                            showRadios={showRadios}
+                        />
                         <div className={style.homeContainer}>
                             <Pagination handlePage={handlePageChange} actualPage={actualPage} totalPages={totalPages} indexFirst={indexOfFirstCard} />
                             <Cards allPokemons={currentCards} />
                         </div>
-                    </>
-                }
-            </div>
+                    
+                
+            </section>
         </>
     )
-});
+};
 
 export default HomePage

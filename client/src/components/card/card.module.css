@@ -12,7 +12,23 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
     background-size: 20px 20px;
     box-shadow: 5px 2px 5px rgb(75, 75, 75);
+    animation: myAnim 0.5s ease 0s 1 normal forwards;
 }
+
+
+@keyframes myAnim {
+    0% {
+      transform: scale(0);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+
+
 
 .cardContainer img {
     height: 150px;

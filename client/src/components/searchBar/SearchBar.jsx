@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { getAllPokemons, getPokemonName } from "../../redux/actions/actions"
+import { getPokemonName } from "../../redux/actions/actions"
 import style from './searchbar.module.css'
 
-const SearchBar = () => {
+const SearchBar = ({setActualPage}) => {
     const dispatch = useDispatch()
     const [nameInput, setNameInput] = useState("")
-
+   
     const handleChange = (event) => {
         setNameInput(event.target.value)
     }
@@ -14,12 +14,9 @@ const SearchBar = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
          dispatch(getPokemonName(nameInput));
-         setNameInput("")
+         setActualPage(1)
     }
-    const handleReset = () => {
-        dispatch(getAllPokemons());
-        setNameInput("")
-    };
+
 
 
     return (
@@ -31,7 +28,7 @@ const SearchBar = () => {
                     value={nameInput}
                     onChange={handleChange} />
                 <button type="submit" onClick={handleSubmit} className={style.btnSearch}>Search</button>
-                <button type="button" onClick={handleReset} className={style.btnReset}>Reset</button>
+                {/* <button type="button" onClick={handleReset} className={style.btnReset}>Reset</button> */}
             </form>
         </>
     )

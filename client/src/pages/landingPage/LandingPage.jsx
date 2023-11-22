@@ -14,8 +14,8 @@ const LandingPage = () => {
                     </Link>
                 </h1>
                 <h2>
-                    <Link>
-                    About me
+                    <Link to='/about'>
+                        About me
                     </Link>
                 </h2>
                 <h3>
