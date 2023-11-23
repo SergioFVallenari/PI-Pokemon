@@ -85,8 +85,8 @@ const reducer = (state = initialState, { type, payload }) => {
             }
 
         case FILTER_ORIGIN:
-            const origin = payload === 'db' ? state.dbPokemons : payload === 'api' ? state.apiPokemons : payload === 'all' && state.allPokemons 
-    
+            const origin = payload === 'db' ? state.dbPokemons : payload === 'api' ? state.apiPokemons : payload === 'all' && state.allPokemons
+
             return {
                 ...state,
                 allPokemonsCopy: origin,

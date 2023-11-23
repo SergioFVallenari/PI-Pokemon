@@ -12,6 +12,8 @@ const validation = (data) => {
         error.image = 'Image cannot be an empty field'
     } else if (!/^(ftp|http|https):\/\/[^ "]+$/.test(data.image)) {
         error.image = 'The image must be a url'
+    }else if(!/^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*\.(jpg|png|gif)$/i.test(data.image)){
+        error.image = 'The image must be a extension jpg, png or gif'
     }
     //validaciones para hp
     if (data.hp.length === 0) {

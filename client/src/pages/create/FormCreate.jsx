@@ -35,7 +35,7 @@ const FormCreate = ({ create }) => {
 
             setInputData({
                 ...inputData,
-                types: updatedTypes.slice(0, 2) // Limitar a 2 elementos
+                types: updatedTypes.slice(0, 3) // Limitar a 2 elementos
             })
         }
         else {
@@ -51,28 +51,24 @@ const FormCreate = ({ create }) => {
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
-        const formErrors = validation(inputData)
+        const formErrors = validation(inputData);
 
         if (Object.keys(formErrors).length === 0) {
-            create(inputData)
-            dispatch(getAllPokemons())
-            navigate('/home')
+            create(inputData);
+            dispatch(getAllPokemons());
+            navigate('/home');
         } else {
             setErrors(formErrors);
         }
-            
+
     }
 
     return (
         <>
             <section className={style.container}>
                 <article className={style.formContainer}>
-                    <Link to='/home'>
-                    <button> Back </button>
-                    </Link>
-                    
                     <h2>Create Pokémon</h2>
                     <form onChange={handleChange}>
                         <label htmlFor="name">Name:</label>
@@ -129,7 +125,12 @@ const FormCreate = ({ create }) => {
                                 ))
                             }
                         </div>
-                        <button onClick={handleSubmit}> Create </button>
+                        <div>
+                            <button onClick={handleSubmit}> Create </button>
+                            <Link to='/home'>
+                                <button> Back </button>
+                            </Link>
+                        </div>
                     </form>
                 </article>
                 <article>

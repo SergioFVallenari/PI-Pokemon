@@ -60,7 +60,8 @@
 
 .formContainer p{
     font-size: 9px;
-    color: #7B68EE;
-    line-height: 0.5;
-    text-shadow: 2px 2px 5px black;
+    color: #ff0101;
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    background-color: rgba(75, 75, 75, 0.443);
 }

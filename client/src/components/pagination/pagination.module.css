@@ -1,13 +1,22 @@
-.pagContainer button{
-    /* background: linear-gradient(to bottom, red 0%, red 50%, white 50%, white 100%); */
+.pagContainer .pagButton {
     background-color: #5F9EA0;
-    border-radius: 50%;
+    border-radius: 10px;
     padding: 5px;
     transition: 0.3s;
     border: 1px solid black;
 }
 
-.pagContainer button:hover{
-    
-    transform: scale(1.1,1.1);
+.pagContainer .pagButton:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.pagContainer .currentPage {
+    background-color: #00CED1; 
+    color: #fff;
+    padding: 4px;
+}
+
+.pagContainer button{
+    background-color: #5F9EA0;
+    padding: 5px;
 }

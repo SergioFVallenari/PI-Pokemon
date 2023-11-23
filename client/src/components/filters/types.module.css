@@ -28,8 +28,8 @@
 .buttonFilter {
  
     padding: 5px 10px; /* Añade un poco de espacio interno al botón */
-    background-color: #4caf50; /* Cambia el color de fondo del botón */
-    color: white; /* Cambia el color del texto del botón a blanco */
+    background-color: #FFD700; /* Cambia el color de fondo del botón */
+    color: black; /* Cambia el color del texto del botón a blanco */
     border: none; /* Elimina el borde del botón */
     border-radius: 5px; /* Añade bordes redondeados al botón */
     cursor: pointer;

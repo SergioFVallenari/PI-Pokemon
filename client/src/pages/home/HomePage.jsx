@@ -2,9 +2,9 @@ import Cards from "../../components/cards/Cards"
 import NavBar from "../../components/navBar/NavBar"
 import style from './homePage.module.css'
 
-import React from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
-import { filterOrigin, filterType, orderBy } from "../../redux/actions/actions"
+import { filterOrigin, filterType, getAllPokemons, orderBy } from "../../redux/actions/actions"
 import {  useState } from "react"
 import TypesFilter from "../../components/filters/Filters"
 import Pagination from "../../components/pagination/pagination"
@@ -57,6 +57,7 @@ const HomePage = ({actualPage, handlePageChange, setActualPage}) => {
             handleRadioChange('all')
             setSelectedOrigin('')
             setSelectedOrder('null')
+            dispatch(filterOrigin('all'))
         }
     };
 

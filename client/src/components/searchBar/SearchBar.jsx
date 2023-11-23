@@ -26,7 +26,8 @@ const SearchBar = ({setActualPage}) => {
                     type="search"
                     id="name"
                     value={nameInput}
-                    onChange={handleChange} />
+                    onChange={handleChange}
+                    placeholder="Enter a name or Id" />
                 <button type="submit" onClick={handleSubmit} className={style.btnSearch}>Search</button>
                 {/* <button type="button" onClick={handleReset} className={style.btnReset}>Reset</button> */}
             </form>
