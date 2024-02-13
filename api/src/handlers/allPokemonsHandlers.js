@@ -5,7 +5,7 @@ const allPokemonsHandler = async (req, res) => {
         const allPokemons = await getPokemons()
         res.status(200).json(allPokemons)
     } catch (error) {
-        res.status(400).send('Error del servidor')
+        res.status(500).send(error)
     }
 }
 

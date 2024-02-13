@@ -5,7 +5,6 @@ const getPokemons = async () => {
     const url = 'https://pokeapi.co/api/v2/pokemon'
     const limit = 350
     const { data } = await axios(`${url}?limit=${limit}&offset=00`)
-
     const listPokemons = data.results
 
     const detailPokemons = await Promise.all(listPokemons.map(async (pokemon) => {
@@ -37,7 +36,7 @@ const getPokemons = async () => {
     });
     
     const pokemonsCombined = [...detailPokemons, ...pokemons]
-    return pokemonsCombined
+    return detailPokemons
 
 }
 
