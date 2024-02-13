@@ -30,24 +30,16 @@ function App() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {  //Se muestran todos los pokemones ni bien se monta el componente
-    const fetchData = async () => {
-      try {
-        setLoading(true)
-        await dispatch(getAllPokemons());
-        await dispatch(getTypes());
-      } catch (error) {
+    
+     
+        dispatch(getAllPokemons());
+         dispatch(getTypes());
 
-      }
-      finally {
-        // Oculta el loader después de cargar los datos
-        setLoading(false);
-      }
-    }
-    fetchData()
+   
 
   }, [dispatch])
 
-  const url = 'http://localhost:3001/pokemons'
+  const url = 'https://pokemonrender.onrender.com/pokemons'
 
   const createPokemon = async (pokemon) => {
     try {

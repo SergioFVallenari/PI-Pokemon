@@ -124,10 +124,10 @@ const FormCreate = ({ create }) => {
                                 ))
                             }
                         </div>
-                        <div className='flex flex-col md:flex-row items-center justify-center gap-y-4 py-4'>
-                            <button onClick={handleSubmit}> Create </button>
+                        <div className='flex flex-col md:flex-row items-center justify-center gap-y-4 py-4 gap-x-4'>
+                            <button className='bg-[black] p-2' onClick={handleSubmit}> Create </button>
                             <Link to='/home'>
-                                <button> Back </button>
+                                <button className='bg-[black] p-2'> Back </button>
                             </Link>
                         </div>
                     </form>

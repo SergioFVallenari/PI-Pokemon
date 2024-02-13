@@ -1,7 +1,7 @@
 import { FILTER_ORIGIN, FILTER_TYPE, GET_ALL_POKEMONS, GET_POKEMON_ID, GET_POKEMON_NAME, GET_TYPES, ORDER_BY, RESET_DETAIL } from "./actions-types"
 import axios from 'axios'
 import { showAlert } from "../../App"
-const endpoint = 'http://localhost:3001'
+const endpoint = 'https://pokemonrender.onrender.com'
 
 
 
