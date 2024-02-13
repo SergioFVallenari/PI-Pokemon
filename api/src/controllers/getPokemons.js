@@ -8,7 +8,7 @@ const getPokemons = async () => {
     const listPokemons = data.results
 
     const detailPokemons = await Promise.all(listPokemons.map(async (pokemon) => {
-        const { data } = await axios(pokemon.url)
+        const { data } = await axios({url:pokemon.url, timeout: 10000})
         const characterPokemon = {
             id: data.id,
             name: data.name,
