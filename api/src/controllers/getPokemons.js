@@ -36,7 +36,7 @@ const getPokemons = async () => {
     });
     
     const pokemonsCombined = [...detailPokemons, ...pokemons]
-    return detailPokemons
+    return pokemonsCombined
 
 }
 
