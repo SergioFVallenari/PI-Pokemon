@@ -16,6 +16,8 @@ router.use('/pokemons', routerPokemon)
 router.get('/pokemon', namePokemonHandler)
 router.use('/types', routerTypes)
 
-
+router.get('/', (req, res) => {
+    res.send('¡Bienvenido a mi aplicación de Pokémon!');
+  });
 
 module.exports = router;
