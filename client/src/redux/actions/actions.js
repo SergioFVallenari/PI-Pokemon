@@ -81,10 +81,10 @@ const getTypes = () =>{
     }
 }
 
-const filterType = (type) =>{
+const filterType = (type1) =>{
     return {
         type: FILTER_TYPE,
-        payload: type
+        payload: type1
     }
 }
 

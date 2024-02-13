@@ -1,81 +1,8 @@
-.detailContainer {
-    display: flex;
-    place-content: center;
-    /* background: repeating-linear-gradient(to bottom,
-            #0f0a1e,
-            #0f0a1e 2px,
-            rgba(15, 10, 30, 0.03) 2px,
-            rgba(15, 10, 30, 0.03) 4px);
-    background-color: #3a3a3a; */
-    height: 100vh;
-    background-image: url('../../../public/pasto.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;  
-    
-}
-
-.infoContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    place-content: center;
-    width: 30vw;
-    height: 90vh;
-    background-color: #DC143C;
-    margin-top: 5vh;
-    margin-right: 5px;
-    border: 2px solid black;
-    font-size: 10px;
-    text-transform: uppercase;
-    border-radius: 10px;
-}
-.border{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    border: 2px solid black;
-    height: 80%;
-    width: 80%;
-    border-radius: 10px;
-}
-
-.contBorder{
-    display: flex;
-    margin: 10px;
-    place-content: center;
-    background-color: #B22222;
-    width: 65vw;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-.info{
-    background-color: #DCDCDC;
-    width: 80%;
-    height: 25vh;
-    border: 5px solid #919191;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.iconStyle{
-    display: flex;
-    place-content: center;
-    margin-left: -15px;
-}
-
-.iconStyle span{
-    padding: 20px;
-}
-
-.infoContainer img {
+.imgContainer img {
     filter: drop-shadow(10px 5px 3px rgba(15, 15, 15, 0.329));
-    height: 60%;
-    width: 80%;
+   
+    margin-left: auto;
+    margin-right: auto;
     background: repeating-linear-gradient(to bottom,
             #0f0a1e,
             #0f0a1e 2px,
@@ -83,26 +10,9 @@
             rgba(15, 10, 30, 0.03) 4px);
     background-color: #3a3a3a;
     border: 5px solid #919191;
-}
-
-
-.statsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    place-content: center;
-    height: 90vh;
-    width: 30vw;
-    background-color: #DC143C;
-    margin-top: 5vh;
-    margin-left: 5px;
-    color: #000000;
-    text-shadow: 1px 1px 5px #525252;
-    border: 2px solid black;
-    font-size: 15px;
-    text-transform: uppercase;
     border-radius: 10px;
 }
+
 
 .statsBar {
     width: 50%;
@@ -342,7 +252,7 @@
 .typeBug {
     margin: 5px;
     border-radius: 5px;
-    padding: 2px;
+    padding: 5px;
     background-color: #A8B820;
     color: #ffffff;
     border: 2px solid black;
@@ -356,7 +266,8 @@
     background-image: url('../../../public/icons/bug.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 25px
+    background-size: 25px;
+    border: 2px solid black;
 }
 
 .typeRock {
@@ -492,7 +403,7 @@ progress[value]::-webkit-progress-bar {
 }
 
 progress[value]::-webkit-progress-value {
-    background-color: rgb(50,205,50);
+    background-color: #59B388;
     /* Cambia el color a verde */
 }
 
@@ -501,25 +412,29 @@ progress[value]::-moz-progress-bar {
     background-color: #22aac2
 }
 
-
+.statsContainer span button{
+    margin-top: 40%;
+    padding: 25px;
+}
 
 .btnHome{
     border-radius: 100%;
-    background-color: #00b7ff;
+    background-color: #708090;
     position: relative;
-    padding: 15px;
+    padding: 20px;
+    margin:5px
 }
 
 .btnNext{
     border-radius: 100%;
-    background-color:  	 	 	#66CDAA;
+    background-color:  	 	 	#C0C0C0;
     position: relative;
     padding: 15px;
 }
 
 .btnPrev{
     border-radius: 100%;
-    background-color:  	 	 	#66CDAA;
+    background-color:  	 	 	#C0C0C0;
     position: relative;
     padding: 15px;
 }

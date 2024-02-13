@@ -19,7 +19,7 @@
 .btnReset:hover {
     background-color: #ff5252; /* Rojo más claro al pasar el mouse */
 }
-
+/* 
 form input[type='search']{
     border-radius: 20px;
     padding: 5px;
@@ -29,4 +29,4 @@ form input[type='search']:focus {
     outline: none;
     border-color: #ff5252;
     box-shadow: 0 0 5px #ff5252;
-}
+} */

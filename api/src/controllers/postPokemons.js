@@ -16,11 +16,11 @@ const postPokemon = async (name, image, hp, attack, defense, speed, height, weig
                 
                 return await newPokemon.addType(addTypes);
             } else {
-                throw new Error('El pokemon ya existe')
+                throw new Error('The pokémon already exists')
             }
         }
         else {
-            throw new Error('El nuevo pokemón no puede tener más de dos tipos')
+            throw new Error('The new pokemon cannot have more than two types')
         }
 }
 

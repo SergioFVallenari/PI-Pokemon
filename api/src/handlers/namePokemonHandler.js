@@ -10,7 +10,7 @@ const namePokemonHandler = async (req, res) =>{
             return res.status(200).json(pokemonName)
         }
         else{
-            throw new Error('Pokemon no encontrado')
+            throw new Error('Pokemon not found')
         }
         
     } 

@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getAllPokemons, getTypes } from './redux/actions/actions'
 import Loading from './components/loading/Loading'
+import Pokememo from './pages/pokememo/Pokememo'
 
 export const showAlert = (message) => {
   const alertContainer = document.createElement('div');
@@ -97,6 +98,7 @@ function App() {
           <Loading /> :
           <HomePage handlePageChange={handlePageChange} actualPage={actualPage} setActualPage={(num) => setActualPage(num)} />}></Route>
         <Route path='/detail/:id' element={<Detail deletePokemons={deletePokemon} />}></Route>
+        <Route path='/pokememo' element={<Pokememo/>}/>
         <Route path='/createpokemon' element={<FormCreate create={createPokemon} />}></Route>
       </Routes>
     </>

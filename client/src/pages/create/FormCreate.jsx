@@ -11,7 +11,6 @@ const FormCreate = ({ create }) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const types = useSelector((state) => state.allTypes)
-    console.log('componente form', types);
     const [inputData, setInputData] = useState({
         name: "",
         image: "",
@@ -67,10 +66,10 @@ const FormCreate = ({ create }) => {
 
     return (
         <>
-            <section className={style.container}>
-                <article className={style.formContainer}>
+            <section className="flex md:flex-wrap md:min-h-screen items-center justify-around">
+                <article className={`flex flex-col justify-center items-center place-content-center md:w-[50vw] xl:min-h-screen mx-2 my-4 lg:my-10 bg-[#DC143C] rounded-lg border-2 border-black ${style.formContainer}`}>
                     <h2>Create Pokémon</h2>
-                    <form onChange={handleChange}>
+                    <form onChange={handleChange} className='flex place-content-center items-center flex-col md:w-[80%] max-h-full m-[10px] border-2 border-black rounded-lg bg-[#B22222] text-sm'>
                         <label htmlFor="name">Name:</label>
                         <input type="text" value={inputData.name} name='name' id='name' onChange={handleChange} />
                         {
@@ -115,17 +114,17 @@ const FormCreate = ({ create }) => {
                         {
                             errors.types && <p>{errors.types}</p>
                         }
-                        <div className={style.typesContainer}>
+                        <div className={`${style.typesContainer} grid grid-cols-2 lg:grid-cols-3 p-3 lg:w-[50%] gap-2`}>
                             {
                                 types.map((type, index) => (
                                     <label key={index}>
-                                        <input type="checkbox" value={type} onChange={handleChange} checked={inputData.types.includes(type)} />
-                                        {type}
+                                            <input type="checkbox" value={type} onChange={handleChange} checked={inputData.types.includes(type)} />
+                                            {type}
                                     </label>
                                 ))
                             }
                         </div>
-                        <div>
+                        <div className='flex flex-col md:flex-row items-center justify-center gap-y-4 py-4'>
                             <button onClick={handleSubmit}> Create </button>
                             <Link to='/home'>
                                 <button> Back </button>
@@ -133,7 +132,7 @@ const FormCreate = ({ create }) => {
                         </div>
                     </form>
                 </article>
-                <article>
+                <article className='hidden xl:block'>
                     <img src={rojo} alt="" />
                 </article>
             </section>

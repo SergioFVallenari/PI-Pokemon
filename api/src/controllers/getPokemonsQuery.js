@@ -3,7 +3,7 @@ const { Pokemon, Type } = require('../db');
 
 const getPokemonsQuery = async (name) => {
     if (!name) {
-        throw new Error('Debe proporcionar un nombre');
+        throw new Error('Enter a name or number');
     }
 
     const dbPokemon = await Pokemon.findAll({

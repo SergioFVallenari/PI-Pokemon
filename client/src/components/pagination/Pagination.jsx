@@ -1,8 +1,14 @@
 import React from 'react';
-import style from './pagination.module.css';
+import { MdOutlineNavigateNext } from "react-icons/md";
+import { MdOutlineSkipNext } from "react-icons/md";
+import { MdOutlineSkipPrevious } from "react-icons/md";
+import { GrFormPrevious } from "react-icons/gr";
+
+
+
 
 const Pagination = ({ totalPages, actualPage, handlePage }) => {
-    const pagesToShow = 10;
+    const pagesToShow = 4;
     const totalPagesArray = []
 
     for (let i = 1; i <= totalPages; i++) {
@@ -20,29 +26,29 @@ const Pagination = ({ totalPages, actualPage, handlePage }) => {
 
     return (
         <>
-            <div className={style.pagContainer}>
-                <button onClick={() => handlePage(1)} disabled={actualPage === 1}>
-                    ⏮
+            <div className="flex flex-wrap items-center justify-center space-x-2 mt-2 mb-2">
+                <button onClick={() => handlePage(1)} disabled={actualPage === 1} className='bg-[#8B0000] py-1 px-2 rounded-full'>
+                    <MdOutlineSkipPrevious />
                 </button>
-                <button onClick={() => handlePage(actualPage - 1)} disabled={actualPage === 1}>
-                    ⏪
+                <button onClick={() => handlePage(actualPage - 1)} disabled={actualPage === 1} className='bg-[#8B0000] py-1 px-2 rounded-full'>
+                    <GrFormPrevious />
                 </button>
 
                 {totalPagesArray.slice(startPage - 1, endPage).map((pageNumber) => (
                     <button
                         key={pageNumber}
                         onClick={() => handlePageInRange(pageNumber)}
-                        className={pageNumber === actualPage ? `${style.currentPage} ${style.pagButton}` : style.pagButton}
+                        className={pageNumber === actualPage ? `bg-[#DC143C] text-sm text-black py-1 px-2 rounded-full` : ` bg-[#8B0000] py-1 px-2 rounded-full text-sm`}
                     >
                         {pageNumber}
                     </button>
                 ))}
 
-                <button onClick={() => handlePage(actualPage + 1)} disabled={actualPage === totalPages}>
-                    ⏩
+                <button onClick={() => handlePage(actualPage + 1)} disabled={actualPage === totalPages} className='bg-[#8B0000] py-1 px-2 rounded-full'>
+                    <MdOutlineNavigateNext />
                 </button>
-                <button onClick={() => handlePage(totalPages)} disabled={actualPage === totalPages}>
-                    ⏭
+                <button onClick={() => handlePage(totalPages)} disabled={actualPage === totalPages} className='bg-[#8B0000] py-1 px-2 rounded-full'>
+                    <MdOutlineSkipNext />
                 </button>
             </div>
         </>

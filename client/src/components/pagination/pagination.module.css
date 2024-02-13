@@ -1,7 +1,7 @@
 .pagContainer .pagButton {
     background-color: #5F9EA0;
     border-radius: 10px;
-    padding: 5px;
+
     transition: 0.3s;
     border: 1px solid black;
 }

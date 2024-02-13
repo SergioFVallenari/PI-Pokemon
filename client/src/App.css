@@ -58,11 +58,6 @@ button {
   transition: transform 0.2s
 }
 
-button:hover {
-  background-color: rgb(129, 129, 202); 
-  color: #fff;
-}
-
 button:active{
   transform: translateY(2px);
 }

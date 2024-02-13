@@ -72,41 +72,40 @@ const Detail = ({ deletePokemons }) => {
         <>
             {
                 showPag ? <Loading /> :
-                    <section className={style.detailContainer}>
-                        <div className={style.contBorder}>
-                            <article className={style.infoContainer}>
-
+                    <section className='md:w-[60vw] mx-auto md:flex sm:pt-[5%] sm:pb-[5%] p-2'>
+                        <div className=''>
+                            <article className='bg-[#DCDCDC] md:w-[60vw] items-center justify-center md:flex flex-col rounded-t-xl'>
                                 {
                                     isNaN(id) && <button onClick={handleSubmit}>Delete</button>
                                 }
-                                <div className={style.border}>
-                                    <img src={detailPokemon.image} alt={detailPokemon.name} />
-                                    <div className={style.info}>
-                                        <h1>#{detailPokemon.id}</h1>
-                                        <h2>Name: {detailPokemon.name?.charAt(0).toUpperCase() + detailPokemon.name?.slice(1)}</h2>
-                                        <h3>Types:
-                                            {detailPokemon.types && detailPokemon.types.map((type, index) => (
-                                                <span
-                                                    key={index}
-                                                    className={style[`type${capitalLetter(type.name)}`]}>
-                                                    {capitalLetter(type.name)}
-                                                </span>
-                                            ))}
-                                        </h3>
-                                        <div className={style.iconStyle}>
-                                            {detailPokemon.types && detailPokemon.types.map((type, index) => (
-                                                <span
-                                                    key={index}
-                                                    className={style[`icon${capitalLetter(type.name)}`]}>
-                                                </span>
-                                            ))}
-                                        </div>
+                                <div className={`${style.imgContainer} md:m-2`}>
+                                    <img src={detailPokemon.image} alt={detailPokemon.name} className='h-96' />
+                                </div>
+                                <div className='bg-[#C0C0C0] flex flex-col md:p-2 md:w-[60vw] text-center items-center'>
+                                    <h1 className='text-pokeGold pt-2'>#{detailPokemon.id}</h1>
+                                    <h2>Name: {detailPokemon.name?.charAt(0).toUpperCase() + detailPokemon.name?.slice(1)}</h2>
+                                    <h3 className='m-2 text-sm md:text-md'>Types:
+                                        {detailPokemon.types && detailPokemon.types.map((type, index) => (
+                                            <span
+                                                key={index}
+                                                className={`${style[`type${capitalLetter(type.name)}`]} p-[5px]`}>
+                                                {capitalLetter(type.name)}
+                                            </span>
+                                        ))}
+                                    </h3>
+                                    <div className='flex content-center ' >
+                                        {detailPokemon.types && detailPokemon.types.map((type, index) => (
+                                            <span
+                                                key={index}
+                                                className={style[`icon${capitalLetter(type.name)}`]}>
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
                             </article>
-                            <article className={style.statsContainer}>
-                                <h2>Stats</h2>
-                                <div className={style.borderStats}>
+                            <article className=' bg-[#696969] md:p-2 items-center justify-between ,tablet:flex tablet:flex-col text-center rounded-b-xl'>
+                                <h2 className='md:p-2 text-pokeGold'>Stats</h2>
+                                <div className='text-center'>
                                     <h3>Hp: {detailPokemon.hp} /200</h3>
                                     <progress
                                         className={style.statsBar}
@@ -146,15 +145,15 @@ const Detail = ({ deletePokemons }) => {
                                 </div>
                                 {
                                     !isNaN(id) ?
-                                        <span>
-                                            <button onClick={handleSubmitPrevious} className={style.btnPrev}><img src={previous} alt="" /></button>
+                                        <span className='md:p-2'>
+                                            <button onClick={handleSubmitPrevious} className={`${style.btnPrev} hover:bg-[#DCDCDC]`}><img src={previous} alt="" /></button>
                                             <Link to='/home'>
                                                 <button className={style.btnHome}> <img src={exit} alt="" /></button>
                                             </Link>
-                                            <button onClick={handleSubmitNext} className={style.btnNext}><img src={next} alt="" /></button>
+                                            <button onClick={handleSubmitNext} className={`${style.btnNext} hover:bg-[#DCDCDC]`}><img src={next} alt="" /></button>
                                         </span> :
                                         <Link to='/home'>
-                                            <button className={style.btnHome}> <img src={exit} alt="" /></button>
+                                            <button className={`${style.btnHome}`}> <img src={exit} alt="" /></button>
                                         </Link>
                                 }
                             </article>

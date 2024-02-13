@@ -19,10 +19,10 @@
   .pokemon::before {
     content: '';
     position: absolute;
-    height: 8px;
-    width: 100px;
+    height: 12px;
+    width: 100%;
     background: black;
-    top: 50px;
+    top: 50%;
     transform: translatey(-50%);
   }
   
@@ -33,14 +33,14 @@
     width: 38px;
     border-radius: 50%;
     background: white;
-    top: 50px;
-    left: 50px;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white, inset 0 0 0 12px black;
   
   }
   
-  /* Spin Animation */
+  
   @keyframes spin {
     from {
       transform: rotate(0deg);
