@@ -23,20 +23,8 @@ const getPokemons = async () => {
         }
         return characterPokemon
     }))
-    const pokemons = await Pokemon.findAll({
-        include: {
-            model: Type,
-            attributes: {
-                exclude: ['id']
-            },
-            through: {
-                attributes: []
-            }
-        }
-    });
-    
-    const pokemonsCombined = [...detailPokemons, ...pokemons]
-    return pokemonsCombined
+
+    return detailPokemons
 
 }
 
