@@ -18,7 +18,7 @@ const LandingPage = () => {
                         About me
                     </Link>
                 </h2>
-                <h3 className={`${style.h3Name} md:top-[90vh] top-[60vh] text-[25px]`}>
+                <h3 className={`${style.h3Name} md:top-[90vh] top-[75vh] text-[15px] p-2 md:text-[25px]`}>
                     Created By: Sergio Vallenari
                 </h3>
             </div>
