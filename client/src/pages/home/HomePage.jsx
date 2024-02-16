@@ -21,7 +21,6 @@ const HomePage = ({ actualPage, handlePageChange, setActualPage }) => {
     const [selectedOrigin, setSelectedOrigin] = useState('')
     const [showRadios, setShowRadios] = useState(false);
     const [slideDirection, setSlideDirection] = useState('slide-normal')
-    console.log(allPokemons);
     useEffect(() => {
         setTimeout(() => {
             setSlideDirection(null)
