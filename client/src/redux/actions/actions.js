@@ -4,18 +4,17 @@ import { showAlert } from "../../App"
 const endpoint = 'https://pokemonrender.onrender.com'
 
 
-
 const getAllPokemons = () =>{
     return async(dispatch)=>{
         try {
             const {data} = await axios(`${endpoint}/pokemons`)
-            return dispatch({
+            return await dispatch({
                 type: GET_ALL_POKEMONS,
                 payload: data
             })    
         } 
         catch (error) {
-            showAlert(error.message)
+            console.log(error)
         }
     }
 }

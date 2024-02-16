@@ -30,14 +30,22 @@ function App() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {  //Se muestran todos los pokemones ni bien se monta el componente
-    
-     
-        dispatch(getAllPokemons());
-         dispatch(getTypes());
+    const fetchData = async () => {
+      try {
+        setLoading(true)
+        await dispatch(getAllPokemons());
+        await dispatch(getTypes());
+      } catch (error) {
+        console.error('Error en la solicitud axios:', error);
+      }
+      finally {
+        // Oculta el loader después de cargar los datos
+        setLoading(false);
+      }
+    }
+    fetchData()
 
-   
-
-  }, [dispatch])
+  }, [])
 
   const url = 'https://pokemonrender.onrender.com/pokemons'
 
