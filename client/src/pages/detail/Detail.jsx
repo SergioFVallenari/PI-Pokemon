@@ -76,14 +76,14 @@ const Detail = ({ deletePokemons }) => {
                         <div className=''>
                             <article className='bg-[#DCDCDC] md:w-[60vw] items-center justify-center md:flex flex-col rounded-t-xl'>
                                 {
-                                    isNaN(id) && <button onClick={handleSubmit}>Delete</button>
+                                    isNaN(id) && <button onClick={handleSubmit} className='md:ml-0 ml-[35%]'>Delete</button>
                                 }
                                 <div className={`${style.imgContainer} md:m-2`}>
                                     <img src={detailPokemon.image} alt={detailPokemon.name} className='h-96' />
                                 </div>
                                 <div className='bg-[#C0C0C0] flex flex-col md:p-2 md:w-[60vw] text-center items-center'>
-                                    <h1 className='text-pokeGold pt-2'>#{detailPokemon.id}</h1>
-                                    <h2>Name: {detailPokemon.name?.charAt(0).toUpperCase() + detailPokemon.name?.slice(1)}</h2>
+                                    <h1 className='text-pokeGold pt-2 text-sm md:text-xl'>#{detailPokemon.id}</h1>
+                                    <h2 className='p-2 text-sm'>Name: {detailPokemon.name?.charAt(0).toUpperCase() + detailPokemon.name?.slice(1)}</h2>
                                     <h3 className='m-2 text-sm md:text-md'>Types:
                                         {detailPokemon.types && detailPokemon.types.map((type, index) => (
                                             <span

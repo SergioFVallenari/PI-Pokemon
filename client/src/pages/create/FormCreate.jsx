@@ -66,7 +66,7 @@ const FormCreate = ({ create }) => {
 
     return (
         <>
-            <section className="flex md:flex-wrap md:min-h-screen items-center justify-around">
+            <section className="flex md:flex-wrap md:min-h-screen items-center justify-around dark:text-white text-black">
                 <article className={`flex flex-col justify-center items-center place-content-center md:w-[50vw] xl:min-h-screen mx-2 my-4 lg:my-10 bg-[#DC143C] rounded-lg border-2 border-black ${style.formContainer}`}>
                     <h2>Create Pokémon</h2>
                     <form onChange={handleChange} className='flex place-content-center items-center flex-col md:w-[80%] max-h-full m-[10px] border-2 border-black rounded-lg bg-[#B22222] text-sm'>

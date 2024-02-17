@@ -11,16 +11,13 @@ const Card = ({ id, name, image, types }) => {
 
 
 
-    // console.log('cleanedTypes:', cleanedTypes);
-    // console.log('backgroundClass:', backgroundClass);
-    // console.log(types);
     return (
         <>
-            <div className={`${style.cardContainer} ${style[backgroundClass]} tablet:w-[15vw] p-2 m-2 h-auto flex flex-col items-center justify-center`}>
+            <div className={`${style.cardContainer} ${style[backgroundClass]} md:w-[10vw] w-[80%] p-2 m-2 h-auto flex flex-col items-center justify-center`}>
                 <div className={`${style.imgContainer} shadow-lg`}>
                     {
-                        !image? 'iqejgi' :
-                    <img src={image} alt="" className="relative bottom-5"/>
+                        !image? '' :
+                    <img src={image} alt="" className="size-[150px] hover:scale-110 transition duration-500"/>
                     }
                 </div>
                 <h3>{name.charAt(0).toUpperCase() + name?.slice(1)}</h3>
