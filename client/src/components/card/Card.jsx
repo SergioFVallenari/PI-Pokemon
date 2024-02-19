@@ -13,7 +13,7 @@ const Card = ({ id, name, image, types }) => {
 
     return (
         <>
-            <div className={`${style.cardContainer} ${style[backgroundClass]} md:w-[10vw] w-[80%] p-2 m-2 h-auto flex flex-col items-center justify-center`}>
+            <div className={`${style.cardContainer} ${style[backgroundClass]} lg:w-[175px] w-[200px] p-2 m-2 h-auto flex flex-col items-center justify-center`}>
                 <div className={`${style.imgContainer} shadow-lg`}>
                     {
                         !image? '' :
